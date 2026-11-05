@@ -1,0 +1,331 @@
+.modalidades {
+  background: var(--branco);
+}
+
+.modalidades__cabecalho {
+  display: grid;
+  grid-template-columns: 0.72fr 1.75fr 1.25fr;
+  gap: clamp(24px, 3.5vw, 52px);
+  align-items: start;
+  border-top: 1px solid var(--linha);
+  padding-top: 22px;
+  margin-bottom: clamp(38px, 4.8vw, 58px);
+}
+
+.modalidades__cabecalho h2 {
+  max-width: 16ch;
+  color: var(--tinta);
+  font-size: clamp(2.3rem, 3.6vw, 3.55rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.modalidades__intro {
+  max-width: 42ch;
+  padding-top: 5px;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+.modalidades__split {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  border: 1px solid var(--linha-forte);
+}
+
+.modalidades__coluna {
+  display: flex;
+}
+
+.modalidade {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 548px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(34px, 4.5vw, 58px);
+}
+
+.modalidade--presencial {
+  background: var(--azul-50);
+  color: var(--tinta);
+}
+
+.modalidade--tele {
+  border-left: 1px solid var(--linha-forte);
+  background: var(--azul-900);
+  color: var(--branco);
+}
+
+.modalidade__conteudo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modalidade__topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  color: var(--azul-700);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.modalidade--tele .modalidade__topo {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.modalidade__numero {
+  color: var(--azul-500);
+  font-family: var(--fonte-titulo);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.modalidade--tele .modalidade__numero {
+  color: var(--azul-300);
+}
+
+.modalidade__rotulo {
+  flex: none;
+}
+
+.modalidade__linha {
+  height: 1px;
+  flex: 1;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.modalidade h3 {
+  margin-top: 30px;
+  color: var(--tinta);
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+.modalidade--tele h3 {
+  color: var(--branco);
+}
+
+.modalidade__descricao {
+  max-width: 43ch;
+  margin-top: 15px;
+  color: var(--texto-suave);
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+.modalidade--tele .modalidade__descricao {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.modalidade__lista {
+  width: 100%;
+  max-width: 390px;
+  margin-top: 26px;
+  margin-bottom: 30px;
+  border-top: 1px solid var(--linha-forte);
+}
+
+.modalidade--tele .modalidade__lista {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.modalidade__lista li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid var(--linha-forte);
+  padding: 9px 0;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.modalidade--tele .modalidade__lista li {
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.modalidade__lista svg {
+  flex: none;
+  color: var(--azul-500);
+}
+
+.modalidade--tele .modalidade__lista svg {
+  color: var(--azul-300);
+}
+
+.modalidade__cta {
+  width: 100%;
+  max-width: 320px;
+  margin-top: auto;
+}
+
+.modalidade__palavra {
+  position: absolute;
+  right: -8px;
+  bottom: -24px;
+  z-index: 0;
+  color: transparent;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(4rem, 7vw, 7.4rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+  pointer-events: none;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px rgba(7, 59, 120, 0.14);
+}
+
+.modalidade--tele .modalidade__palavra {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.14);
+}
+
+.modalidade__grafico {
+  position: absolute;
+  top: 34px;
+  right: 34px;
+  z-index: 0;
+  display: grid;
+  width: 148px;
+  height: 148px;
+  place-items: center;
+  border: 1px solid rgba(7, 59, 120, 0.16);
+  border-radius: 50%;
+  color: var(--azul-700);
+  opacity: 0.55;
+  pointer-events: none;
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 400ms ease;
+}
+
+.modalidades__coluna:hover .modalidade__grafico {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.modalidade__anel {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(7, 59, 120, 0.12);
+  border-radius: 50%;
+}
+
+.modalidade__grafico--tele {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+}
+
+.modalidade__frame-video {
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.modalidade__frame-video::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid rgba(255, 255, 255, 0.35);
+}
+
+.modalidade__pulso {
+  position: absolute;
+  right: -58px;
+  bottom: 16px;
+  width: 170px;
+  color: var(--azul-300);
+  opacity: 0.55;
+}
+
+@media (max-width: 1080px) {
+  .modalidades__cabecalho {
+    grid-template-columns: 1fr 1.65fr;
+  }
+
+  .modalidades__intro {
+    grid-column: 1 / -1;
+    max-width: 58ch;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .modalidades__split {
+    grid-template-columns: 1fr;
+  }
+
+  .modalidade {
+    min-height: auto;
+  }
+
+  .modalidade--tele {
+    border-top: 1px solid var(--linha-forte);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .modalidades__cabecalho {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .modalidades__cabecalho h2 {
+    max-width: 17ch;
+    font-size: clamp(2.1rem, 8vw, 2.7rem);
+  }
+
+  .modalidade {
+    padding: 30px 23px;
+  }
+
+  .modalidade h3 {
+    margin-top: 24px;
+    font-size: 1.9rem;
+  }
+
+  .modalidade__grafico {
+    top: 22px;
+    right: 18px;
+    width: 112px;
+    height: 112px;
+    opacity: 0.35;
+  }
+
+  .modalidade__grafico--tele {
+    opacity: 0.45;
+  }
+
+  .modalidade__palavra {
+    bottom: -14px;
+    font-size: 4.2rem;
+  }
+
+  .modalidade__cta {
+    max-width: none;
+  }
+}

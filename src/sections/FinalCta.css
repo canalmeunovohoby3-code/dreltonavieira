@@ -1,0 +1,164 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--azul-900);
+  color: var(--branco);
+  padding-block: clamp(68px, 7vw, 96px);
+}
+
+.cta__grade {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+.cta__anel {
+  position: absolute;
+  top: -240px;
+  right: -150px;
+  width: 620px;
+  height: 620px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta__anel::after {
+  content: "";
+  position: absolute;
+  inset: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.cta__pulso {
+  position: absolute;
+  right: -2%;
+  bottom: 6%;
+  width: 54%;
+  color: var(--azul-300);
+  opacity: 0.22;
+  pointer-events: none;
+  animation: flutuarPulso 9s ease-in-out infinite;
+}
+
+@keyframes flutuarPulso {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-5px);
+  }
+}
+
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+  gap: clamp(34px, 5vw, 78px);
+  align-items: end;
+}
+
+.cta__conteudo h2 {
+  max-width: 17ch;
+  margin-top: 20px;
+  color: var(--branco);
+  font-size: clamp(2.35rem, 4vw, 3.7rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.cta__conteudo > p {
+  max-width: 52ch;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.cta__acoes {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  justify-self: end;
+}
+
+.cta__botao {
+  width: 100%;
+  min-height: 60px;
+  padding-inline: 20px;
+}
+
+.cta__telefone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  transition: color var(--transicao);
+}
+
+.cta__telefone:hover {
+  color: var(--azul-200);
+}
+
+.cta__telefone svg {
+  color: var(--azul-300);
+}
+
+.cta__detalhe {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .cta__inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .cta__acoes {
+    justify-self: start;
+    max-width: 400px;
+  }
+
+  .cta__pulso {
+    width: 80%;
+    opacity: 0.16;
+  }
+}
+
+@media (max-width: 560px) {
+  .cta__conteudo h2 {
+    font-size: clamp(2.05rem, 8.6vw, 2.6rem);
+  }
+
+  .cta__acoes {
+    max-width: none;
+  }
+
+  .cta__pulso {
+    right: -30%;
+    bottom: 3%;
+    width: 120%;
+  }
+}

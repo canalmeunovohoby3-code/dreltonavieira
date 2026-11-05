@@ -1,0 +1,277 @@
+.local {
+  background: var(--branco);
+}
+
+.local__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(46px, 7vw, 112px);
+  align-items: center;
+}
+
+.local__conteudo h2 {
+  max-width: 15ch;
+  margin-top: 18px;
+  color: var(--tinta);
+  font-size: clamp(2.3rem, 3.6vw, 3.5rem);
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.local__texto {
+  max-width: 50ch;
+  margin-top: 20px;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.74;
+}
+
+.local__contatos {
+  margin-top: 30px;
+  border-top: 1px solid var(--linha);
+}
+
+.contato {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 28px;
+  gap: 14px;
+  align-items: center;
+  border-bottom: 1px solid var(--linha);
+  padding: 13px 0;
+  transition:
+    background-color var(--transicao),
+    padding var(--transicao);
+}
+
+a.contato:hover {
+  background: var(--azul-50);
+  padding-inline: 8px;
+}
+
+.contato__icone {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--linha-forte);
+  color: var(--azul-700);
+  transition:
+    background-color var(--transicao),
+    border-color var(--transicao),
+    color var(--transicao);
+}
+
+a.contato:hover .contato__icone {
+  border-color: var(--azul-700);
+  background: var(--azul-700);
+  color: var(--branco);
+}
+
+.contato__texto {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contato__rotulo {
+  color: var(--azul-700);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.contato__texto strong {
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.contato__seta {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  color: var(--azul-500);
+  transition: transform var(--transicao);
+}
+
+.contato__icone svg {
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.contato:hover .contato__icone svg {
+  transform: scale(1.1) translateY(-1px);
+}
+
+a.contato:hover .contato__seta {
+  transform: translate(2px, -2px);
+}
+
+.local__visual {
+  width: 100%;
+}
+
+.local__mapa {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--linha-forte);
+  background: var(--branco);
+}
+
+.local__mapa-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--linha);
+  padding: 16px 20px;
+}
+
+.local__mapa-rotulo {
+  color: var(--azul-700);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.local__mapa-referencia {
+  color: var(--texto-claro);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.local__mapa-frame {
+  position: relative;
+  min-height: 320px;
+  flex: 1;
+  background: var(--azul-50);
+}
+
+.local__mapa-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(1) contrast(1.03) brightness(1.02);
+}
+
+.local__mapa-rodape {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--azul-900);
+  padding: 17px 20px;
+  color: var(--branco);
+}
+
+.local__mapa-cidade h3 {
+  color: var(--branco);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.local__mapa-cidade p {
+  margin-top: 4px;
+  color: var(--azul-200);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.local__mapa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-align: right;
+  text-transform: uppercase;
+  transition: color var(--transicao);
+}
+
+.local__mapa-link:hover {
+  color: var(--branco);
+}
+
+.local__mapa-link svg {
+  flex: none;
+  color: var(--azul-300);
+}
+
+@media (max-width: 980px) {
+  .local__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(38px, 6vw, 56px);
+  }
+
+  .local__visual {
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .local__conteudo h2 {
+    max-width: 18ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .local__mapa {
+    min-height: 450px;
+  }
+
+  .local__mapa-topo {
+    padding: 14px 16px;
+  }
+
+  .local__mapa-referencia {
+    font-size: 0.52rem;
+  }
+
+  .local__mapa-frame {
+    min-height: 280px;
+  }
+
+  .local__mapa-rodape {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 16px;
+  }
+
+  .local__mapa-cidade h3 {
+    font-size: 1.4rem;
+  }
+
+  .contato {
+    grid-template-columns: 40px minmax(0, 1fr) 24px;
+    gap: 11px;
+  }
+
+  .contato__icone {
+    width: 36px;
+    height: 36px;
+  }
+}

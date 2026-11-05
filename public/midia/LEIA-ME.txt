@@ -1,0 +1,33 @@
+ARQUIVOS DE IMAGEM DA LANDING PAGE
+==================================
+
+Arquivos usados nesta versão:
+
+1. Logo
+   - logo.png (fundo transparente)
+   - Versão dourada completa, usada no cabeçalho e no rodapé.
+   - O arquivo atual está em: public/midia/logo.png
+
+2. Fotografia da fachada/consultório no hero
+   - fotohero.jpeg
+   - Usada no painel principal do hero.
+   - Formato retrato (1080 x 1432 px).
+
+3. Fotografia profissional do médico
+   - dr-elton-avieira.jpg
+   - Usada na seção "Sobre o médico".
+   - Formato quase quadrado (1046 x 1024 px), exibido em recorte vertical 4:5.
+
+Recomendações técnicas
+----------------------
+- Formato JPG ou PNG com boa qualidade e peso otimizado para web.
+- A logo deve ter fundo transparente para funcionar sobre o azul.
+- O site funciona normalmente enquanto algum arquivo não existir:
+  os espaços exibem um marcador visual em azul em vez de imagem quebrada.
+- Para trocar arquivos, mantenha os mesmos nomes ou ajuste src/data/site.ts.
+
+Observação
+----------
+As imagens usadas são as fornecidas pelo cliente.
+Não foram incluídas imagens genéricas de médicos, consultórios ou bancos
+de imagem.
