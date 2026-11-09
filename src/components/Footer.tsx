@@ -1,7 +1,8 @@
-import { linksNavegacao, site, whatsappUrl } from "../data/site";
+import { linksNavegacao, site, urlWhatsApp, whatsappUrl } from "../data/site";
 import { Logo } from "./Logo";
 import { Reveal } from "./Reveal";
 import {
+  IconeCalendario,
   IconeInstagram,
   IconePin,
   IconeSetaTopo,
@@ -57,6 +58,28 @@ export function Footer() {
                   {site.whatsappExibicao}
                 </a>
               </li>
+              {site.whatsappAlternativos.map((contato) => (
+                <li key={contato.numero}>
+                  <a
+                    href={urlWhatsApp(contato.numero)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconeWhatsApp size={14} />
+                    {contato.exibicao}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={site.boaConsultaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconeCalendario size={14} />
+                  BoaConsulta
+                </a>
+              </li>
               <li>
                 <a
                   href={site.instagramUrl}
@@ -68,10 +91,20 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span>
+                <a
+                  href={site.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <IconePin size={14} />
-                  {site.cidade} – {site.estado}
-                </span>
+                  <span className="rodape__endereco">
+                    {site.endereco.rua}, {site.endereco.numero} ·{" "}
+                    {site.endereco.complemento}
+                    <br />
+                    {site.endereco.bairro}, {site.endereco.cidade} –{" "}
+                    {site.endereco.estado} · CEP {site.endereco.cep}
+                  </span>
+                </a>
               </li>
               <li>
                 <span>Atendimento presencial e telemedicina</span>

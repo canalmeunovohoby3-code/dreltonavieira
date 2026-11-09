@@ -1,6 +1,7 @@
+import { useEffect, useRef } from "react";
 import { site, whatsappUrl } from "../data/site";
-import { Media } from "../components/Media";
 import { TypewriterTitle } from "../components/TypewriterTitle";
+import { BoaConsultaLink } from "../components/BoaConsultaLink";
 import { Reveal } from "../components/Reveal";
 import { IconePin, IconeSeta } from "../components/Icons";
 import "./Hero.css";
@@ -12,6 +13,41 @@ const itensMeta = [
 ];
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const tocar = () => {
+      void video.play().catch(() => {});
+    };
+
+    if (typeof IntersectionObserver === "undefined") {
+      tocar();
+      return;
+    }
+
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        const entrada = entradas[0];
+        if (entrada?.isIntersecting) {
+          tocar();
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.12 },
+    );
+
+    observador.observe(video);
+
+    return () => {
+      observador.disconnect();
+      video.pause();
+    };
+  }, []);
+
   return (
     <section className="hero" id="inicio" aria-labelledby="hero-titulo">
       <div className="container hero__grid">
@@ -47,6 +83,10 @@ export function Hero() {
             </div>
           </Reveal>
 
+          <Reveal atraso={220}>
+            <BoaConsultaLink className="hero__boa" />
+          </Reveal>
+
           <Reveal atraso={250} variante="fade">
             <ul className="hero__meta">
               {itensMeta.map((item) => (
@@ -58,25 +98,33 @@ export function Hero() {
 
         <Reveal atraso={150} variante="escala" className="hero__arte">
           <div className="hero__arte-painel">
-            <Media
-              src={site.imagens.hero}
-              alt="Fachada do consultório do Dr. Elton Avieira em Aquidauana"
-              rotulo="Fachada do consultório"
-              prioridade
-              className="hero__arte-foto"
-            />
+            <video
+              ref={videoRef}
+              className="hero__arte-video"
+              poster={site.imagens.hero}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              controls
+              aria-label="Vídeo de apresentação do Dr. Elton Avieira"
+            >
+              <source src={site.videoHero} type="video/mp4" />
+            </video>
             <div className="hero__arte-scrim" aria-hidden="true" />
 
             <div className="hero__arte-topo" aria-hidden="true">
               <span className="hero__arte-numero">01</span>
               <span className="hero__arte-rotulo">Atendimento médico</span>
               <span className="hero__arte-linha" />
-              <span className="hero__arte-mais" />
             </div>
 
             <span className="hero__arte-vertical" aria-hidden="true">
               Presencial · Telemedicina
             </span>
+
+
           </div>
 
           <div className="hero__arte-tag" aria-hidden="true">

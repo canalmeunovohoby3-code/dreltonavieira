@@ -1,9 +1,9 @@
 :root {
   --branco: #ffffff;
-  --azul-950: #052a54;
-  --azul-900: #073b78;
-  --azul-800: #0a4a8f;
-  --azul-700: #155ba5;
+  --azul-950: #031a35;
+  --azul-900: #052647;
+  --azul-800: #06325c;
+  --azul-700: #0d4a7a;
   --azul-600: #0d69ba;
   --azul-500: #0879d1;
   --azul-400: #3699e7;
@@ -28,7 +28,7 @@
 
   --largura: 1280px;
   --altura-topbar: 34px;
-  --altura-header: 100px;
+  --altura-header: 112px;
   --raio: 2px;
   --sombra-azul: 0 24px 60px rgba(7, 59, 120, 0.14);
   --transicao: 220ms cubic-bezier(0.2, 0.7, 0.3, 1);
@@ -36,6 +36,6 @@
 
 @media (max-width: 1080px) {
   :root {
-    --altura-header: 84px;
+    --altura-header: 92px;
   }
 }

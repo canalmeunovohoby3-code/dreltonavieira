@@ -2,6 +2,7 @@ import { whatsappUrl } from "../data/site";
 import { Reveal } from "../components/Reveal";
 import { SectionMarker } from "../components/SectionMarker";
 import { SinalPulso } from "../components/Graphics";
+import { BoaConsultaLink } from "../components/BoaConsultaLink";
 import {
   IconeCheck,
   IconePin,
@@ -86,6 +87,8 @@ export function Modalities() {
                   Agendar pelo WhatsApp
                   <IconeSeta size={14} className="btn__seta" />
                 </a>
+
+                <BoaConsultaLink className="modalidade__boa" />
               </div>
 
               <span className="modalidade__palavra" aria-hidden="true">
@@ -135,6 +138,8 @@ export function Modalities() {
                   Agendar pelo WhatsApp
                   <IconeSeta size={14} className="btn__seta" />
                 </a>
+
+                <BoaConsultaLink claro className="modalidade__boa" />
               </div>
 
               <span className="modalidade__palavra" aria-hidden="true">

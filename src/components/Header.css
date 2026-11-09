@@ -78,9 +78,24 @@
 }
 
 .cabecalho__marca {
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   flex: none;
   align-items: center;
+}
+
+.cabecalho__marca::before {
+  content: "";
+  position: absolute;
+  inset: -16px -20px;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse,
+    rgba(214, 188, 138, 0.16),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .cabecalho__nav {
@@ -350,7 +365,8 @@
 
   .cabecalho__nav,
   .cabecalho__cta,
-  .cabecalho__divisor {
+  .cabecalho__divisor,
+  .cabecalho__boa {
     display: none;
   }
 
@@ -362,4 +378,13 @@
   .cabecalho__menu-botao {
     display: grid;
   }
+}
+
+.cabecalho__boa {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.56rem;
+}
+
+.menu__boa {
+  align-self: flex-start;
 }

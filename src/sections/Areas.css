@@ -65,7 +65,7 @@
 .area {
   position: relative;
   display: grid;
-  min-height: 176px;
+  min-height: 210px;
   grid-template-columns: 42px 50px minmax(0, 1fr) auto;
   gap: 20px;
   align-items: center;
@@ -157,6 +157,20 @@
   font-size: 0.87rem;
   line-height: 1.65;
   transition: color var(--transicao);
+}
+
+.area__conteudo > .area__servicos {
+  max-width: 56ch;
+  margin-top: 7px;
+  color: var(--texto-suave);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  transition: color var(--transicao);
+}
+
+.area:hover .area__conteudo > .area__servicos,
+.area:focus-within .area__conteudo > .area__servicos {
+  color: rgba(255, 255, 255, 0.68);
 }
 
 

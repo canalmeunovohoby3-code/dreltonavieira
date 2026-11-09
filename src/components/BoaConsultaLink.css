@@ -1,0 +1,42 @@
+.boa-consulta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid var(--linha-forte);
+  padding-bottom: 3px;
+  color: var(--azul-700);
+  font-family: var(--fonte-texto);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition:
+    border-color var(--transicao),
+    color var(--transicao);
+}
+
+.boa-consulta:hover {
+  border-color: var(--azul-500);
+  color: var(--azul-500);
+}
+
+.boa-consulta svg {
+  flex: none;
+  transition: transform var(--transicao);
+}
+
+.boa-consulta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.boa-consulta--claro {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.boa-consulta--claro:hover {
+  border-color: var(--branco);
+  color: var(--branco);
+}

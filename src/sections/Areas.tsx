@@ -74,6 +74,9 @@ export function Areas() {
                   <div className="area__conteudo">
                     <h3>{area.titulo}</h3>
                     <p>{area.descricao}</p>
+                    {area.servicos && (
+                      <p className="area__servicos">{area.servicos}</p>
+                    )}
                   </div>
 
                   <span className="area__acao" aria-hidden="true">

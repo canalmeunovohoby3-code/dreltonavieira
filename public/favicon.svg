@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="4" fill="#073B78"/>
+  <rect width="64" height="64" rx="4" fill="#052647"/>
   <rect x="45" y="45" width="10" height="10" fill="#0879D1"/>
   <text x="32" y="41" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-1" fill="#FFFFFF">EA</text>
 </svg>

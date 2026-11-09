@@ -1,7 +1,8 @@
-import { site, whatsappUrl } from "../data/site";
+import { site, urlWhatsApp, whatsappUrl } from "../data/site";
 import { Reveal } from "../components/Reveal";
 import { SectionMarker } from "../components/SectionMarker";
 import { SinalPulso } from "../components/Graphics";
+import { BoaConsultaLink } from "../components/BoaConsultaLink";
 import { IconeSeta, IconeSetaDiagonal, IconeWhatsApp } from "../components/Icons";
 import "./FinalCta.css";
 
@@ -34,6 +35,8 @@ export function FinalCta() {
             <IconeSeta size={15} className="btn__seta" />
           </a>
 
+          <BoaConsultaLink claro className="cta__boa" />
+
           <a
             className="cta__telefone"
             href={whatsappUrl}
@@ -43,6 +46,22 @@ export function FinalCta() {
             {site.whatsappExibicao}
             <IconeSetaDiagonal size={15} />
           </a>
+
+          <span className="cta__outros">
+            Outros WhatsApp:{" "}
+            {site.whatsappAlternativos.map((contato, indice) => (
+              <span key={contato.numero}>
+                <a
+                  href={urlWhatsApp(contato.numero)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {contato.exibicao}
+                </a>
+                {indice < site.whatsappAlternativos.length - 1 ? " · " : ""}
+              </span>
+            ))}
+          </span>
 
           <span className="cta__detalhe">
             Presencial em {site.cidade} – {site.estado} · Telemedicina

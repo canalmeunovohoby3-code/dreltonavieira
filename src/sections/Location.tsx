@@ -1,7 +1,8 @@
-import { site, whatsappUrl } from "../data/site";
+import { site, urlWhatsApp, whatsappUrl } from "../data/site";
 import { Reveal } from "../components/Reveal";
 import { SectionMarker } from "../components/SectionMarker";
 import {
+  IconeCalendario,
   IconeCheck,
   IconeInstagram,
   IconePin,
@@ -25,8 +26,8 @@ export function Location() {
 
           <Reveal atraso={120} variante="fade">
             <p className="local__texto">
-              Consultas presenciais em Aquidauana – MS e atendimento por
-              telemedicina, com acompanhamento individualizado e atenção às
+              Consultas presenciais no consultório em Aquidauana – MS e atendimento
+              por telemedicina, com acompanhamento individualizado e atenção às
               necessidades de cada paciente.
             </p>
           </Reveal>
@@ -51,6 +52,45 @@ export function Location() {
                 </span>
               </a>
 
+              {site.whatsappAlternativos.map((contato) => (
+                <a
+                  key={contato.numero}
+                  className="contato"
+                  href={urlWhatsApp(contato.numero)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="contato__icone" aria-hidden="true">
+                    <IconeWhatsApp size={18} />
+                  </span>
+                  <span className="contato__texto">
+                    <span className="contato__rotulo">WhatsApp alternativo</span>
+                    <strong>{contato.exibicao}</strong>
+                  </span>
+                  <span className="contato__seta" aria-hidden="true">
+                    <IconeSetaDiagonal size={15} />
+                  </span>
+                </a>
+              ))}
+
+              <a
+                className="contato"
+                href={site.boaConsultaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="contato__icone" aria-hidden="true">
+                  <IconeCalendario size={18} />
+                </span>
+                <span className="contato__texto">
+                  <span className="contato__rotulo">BoaConsulta</span>
+                  <strong>Agendar consulta online</strong>
+                </span>
+                <span className="contato__seta" aria-hidden="true">
+                  <IconeSetaDiagonal size={15} />
+                </span>
+              </a>
+
               <a
                 className="contato"
                 href={site.instagramUrl}
@@ -69,14 +109,22 @@ export function Location() {
                 </span>
               </a>
 
-              <div className="contato contato--estatico">
+              <div className="contato contato--estatico contato--endereco">
                 <span className="contato__icone" aria-hidden="true">
                   <IconePin size={18} />
                 </span>
                 <span className="contato__texto">
                   <span className="contato__rotulo">Localização</span>
-                  <strong>
-                    {site.cidade} – {site.estadoNome}
+                  <strong className="contato__endereco">
+                    <span>
+                      {site.endereco.rua}, {site.endereco.numero} ·{" "}
+                      {site.endereco.complemento}
+                    </span>
+                    <span>
+                      {site.endereco.bairro}, {site.endereco.cidade} –{" "}
+                      {site.endereco.estado}
+                    </span>
+                    <span>CEP {site.endereco.cep}</span>
                   </strong>
                 </span>
               </div>
@@ -98,13 +146,15 @@ export function Location() {
           <div className="local__mapa">
             <div className="local__mapa-topo">
               <span className="local__mapa-rotulo">Localização no mapa</span>
-              <span className="local__mapa-referencia">Referência da cidade</span>
+              <span className="local__mapa-referencia">
+                Endereço do consultório
+              </span>
             </div>
 
             <div className="local__mapa-frame">
               <iframe
                 src={site.mapsEmbedUrl}
-                title="Mapa de Aquidauana – MS"
+                title="Mapa do consultório do Dr. Elton Avieira"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
@@ -115,6 +165,7 @@ export function Location() {
               <div className="local__mapa-cidade">
                 <h3>Aquidauana</h3>
                 <p>Mato Grosso do Sul · Brasil</p>
+                <p className="local__mapa-endereco">{site.endereco.linha}</p>
               </div>
 
               <a

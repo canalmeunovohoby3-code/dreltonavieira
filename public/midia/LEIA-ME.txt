@@ -4,14 +4,17 @@ ARQUIVOS DE IMAGEM DA LANDING PAGE
 Arquivos usados nesta versão:
 
 1. Logo
-   - logo.png (fundo transparente)
+   - logonova.png (original com fundo transparente)
+   - logonova-recorte.png (usado no site; margem transparente removida)
    - Versão dourada completa, usada no cabeçalho e no rodapé.
-   - O arquivo atual está em: public/midia/logo.png
+   - Arquivos em: public/midia/
 
-2. Fotografia da fachada/consultório no hero
-   - fotohero.jpeg
-   - Usada no painel principal do hero.
-   - Formato retrato (1080 x 1432 px).
+2. Vídeo do hero
+   - Site.mp4 (na raiz de public)
+   - Versão web: 1080 x 1920 px, 30 fps, 48 segundos, aproximadamente 21 MB.
+   - O vídeo tem áudio e é reproduzido em loop, com controles nativos e autoplay silencioso.
+   - fotohero.jpeg permanece como pôster de carregamento do vídeo.
+   - O original 4K/60 fps está em _originais/Site-4k-original.mp4, fora do repositório.
 
 3. Fotografia profissional do médico
    - dr-elton-avieira.jpg

@@ -53,8 +53,8 @@
 }
 
 .rodape__logo-link .logo__imagem {
-  height: 82px;
-  max-width: 200px;
+  height: 96px;
+  max-width: 220px;
 }
 
 .rodape__assinatura {
@@ -235,4 +235,10 @@
   .rodape__assinatura {
     max-width: 20ch;
   }
+}
+
+.rodape__endereco {
+  display: block;
+  max-width: 32ch;
+  line-height: 1.55;
 }

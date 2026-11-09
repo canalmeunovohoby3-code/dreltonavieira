@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { linksNavegacao, site, whatsappUrl } from "../data/site";
 import { Logo } from "./Logo";
+import { BoaConsultaLink } from "./BoaConsultaLink";
 import {
   IconeFechar,
   IconeInstagram,
@@ -155,6 +156,7 @@ export function Header() {
 
           <div className="cabecalho__acoes">
             <span className="cabecalho__divisor" aria-hidden="true" />
+            <BoaConsultaLink claro className="cabecalho__boa" texto="BoaConsulta" />
             <a
               className="btn btn--claro btn--whats cabecalho__cta"
               href={whatsappUrl}
@@ -224,6 +226,12 @@ export function Header() {
               <IconeWhatsApp size={17} className="btn__icone" />
               Agendar pelo WhatsApp
             </a>
+
+            <BoaConsultaLink
+              claro
+              className="menu__boa"
+              onClick={fecharMenu}
+            />
 
             <div className="menu__contatos">
               <span>

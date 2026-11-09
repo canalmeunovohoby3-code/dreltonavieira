@@ -162,3 +162,23 @@
     width: 120%;
   }
 }
+
+.cta__boa {
+  margin-top: -2px;
+}
+.cta__outros {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.64rem;
+  line-height: 1.6;
+}
+
+.cta__outros a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transicao);
+}
+
+.cta__outros a:hover {
+  color: var(--branco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
